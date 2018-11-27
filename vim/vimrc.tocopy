@@ -102,8 +102,10 @@ set expandtab
 " history length 
 set history=2000
 
-" colorscheme
+" colorscheme, option 1
 let g:gruvbox_italic=1
 colorscheme gruvbox
 set background=dark
 
+" colorscheme, option 2
+" colorscheme happy_hacking

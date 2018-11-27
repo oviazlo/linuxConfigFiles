@@ -2,7 +2,7 @@
 
 CONFIG=""
 if [ -z "$1" ]; then
-    echo "No argument supplied! Choose your setup!"
+    echo "No argument found! Choose your setup from:"
 	echo "[Arch, SL6]"
 	exit
 else

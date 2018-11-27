@@ -15,7 +15,7 @@ for file in $(find $DIR -name '*.tocopy'); do
 	filename=$(basename "$file")
 	filename="${filename%.*}"
 	cp $file ~/.$filename
-    if [ "$CONFIG" = "SL6" ]; then
+    if [ "$CONFIG" = "SL6" -a "$filename" = "vimrc" ]; then
         sed -i 's/let g:ycm_server_python_interpreter = "python3"/let g:ycm_server_python_interpreter = "python2"/' ~/.$filename
     fi
 done

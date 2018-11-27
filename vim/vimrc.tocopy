@@ -61,7 +61,7 @@ map <S-p> cw<C-r>0<ESC>
 
 " YCM server
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_server_python_interpreter = 'python3'
+let g:ycm_server_python_interpreter = "python3"
 " YCM server: for debugging
 " let g:ycm_server_keep_logfiles = 1
 " let g:ycm_server_log_level = 'debug'

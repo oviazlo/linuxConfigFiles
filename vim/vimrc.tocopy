@@ -30,6 +30,8 @@ Plug 'vim-syntastic/syntastic'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'xolox/vim-misc'
 call plug#end()
 
 " NERDcommenter
@@ -57,11 +59,11 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" replace word
 map <S-p> cw<C-r>0<ESC>
 
 " YCM server
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_server_python_interpreter = "python3"
 " YCM server: for debugging
 " let g:ycm_server_keep_logfiles = 1
 " let g:ycm_server_log_level = 'debug'
@@ -109,7 +111,11 @@ if s:uname == "pcmedusax1\n"
     let g:gruvbox_italic=1
     colorscheme gruvbox
     set background=dark
+    " YCM server
+    let g:ycm_server_python_interpreter = "python3"
 elseif s:uname == "pclcd30.dyndns.cern.ch\n"
     " colorscheme, option 2
     colorscheme happy_hacking
+    " YCM server
+    let g:ycm_server_python_interpreter = "python2"
 endif

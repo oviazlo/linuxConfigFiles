@@ -102,15 +102,14 @@ set expandtab
 " history length 
 set history=2000
 
-if system("uname -n") == "pcmedusax1"
+let s:uname = system("uname -n")
+if s:uname == "pcmedusax1\n"
     " colorscheme, option 1
     set termguicolors
     let g:gruvbox_italic=1
     colorscheme gruvbox
     set background=dark
-endif
-
-if system("uname -n") == "pclcd30.dyndns.cern.ch"
+elseif s:uname == "pclcd30.dyndns.cern.ch\n"
     " colorscheme, option 2
     colorscheme happy_hacking
 endif

@@ -32,6 +32,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
+Plug 'nvie/vim-flake8'
+Plug 'tmhedberg/SimpylFold' " <zo> - to open a fold, <zc> - to close a fold
 call plug#end()
 
 " NERDcommenter
@@ -53,6 +55,9 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " needed for nerdcommenter plugin
 filetype plugin on
+
+" SimpylFold: to see the docstrings for folded code
+let g:SimpylFold_docstring_preview=1
 
 " INCsearch
 map /  <Plug>(incsearch-forward)
@@ -103,6 +108,9 @@ set shiftwidth=4
 set expandtab
 " history length 
 set history=2000
+" python_highlight
+let python_highlight_all=1
+syntax on
 
 let s:uname = system("uname -n")
 if s:uname == "pcmedusax1\n"

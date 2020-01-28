@@ -1,0 +1,61 @@
+#
+# ~/.bashrc
+#
+
+[[ $- != *i* ]] && return
+
+# scale graphocs to laptop displa display 
+# if work with external displa - change scale to 1.0x1.0
+# xrandr --output eDP1 --scale 1.25x1.25 --panning 2560x1440+0+0
+
+colors() {
+	local fgc bgc vals seq0
+
+	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
+	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
+	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
+	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
+
+	# foreground colors
+	for fgc in {30..37}; do
+		# background colors
+		for bgc in {40..47}; do
+			fgc=${fgc#37} # white
+			bgc=${bgc#40} # black
+
+			vals="${fgc:+$fgc;}${bgc}"
+			vals=${vals%%;}
+
+			seq0="${vals:+\e[${vals}m}"
+			printf "  %-9s" "${seq0:-(default)}"
+			printf " ${seq0}TEXT\e[m"
+			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+		done
+		echo; echo
+	done
+}
+
+[[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
+
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
+alias lt="ls -lhrt"
+alias grep="grep --color=auto"
+alias pclcd30="ssh -XY viazlo@pclcd30.cern.ch"
+alias lxplus="ssh -XY viazlo@lxplus6.cern.ch"
+alias du-dir="du --max-depth=1 -h"
+export HISTFILESIZE=10000
+export EDITOR=vim
+source ~/.git-prompt.sh
+
+YELLOW="$(tput setaf 3)"
+GREEN="$(tput setaf 2)"
+RESET="$(tput sgr0)"
+export PS1='\[$YELLOW\]\D{%R}\[$RESET\] \u@\h: \[$GREEN\]\W$(__git_ps1 " \[$YELLOW\](%s)")\[$RESET\]\$ '
+
+bind "set completion-ignore-case on"
+
+# export customy bash functions:
+. ~/env/bash/my_functions.bash
+
+. /opt/anaconda/etc/profile.d/conda.sh

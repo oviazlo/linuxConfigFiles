@@ -42,7 +42,7 @@ colors() {
 alias lt="ls -lhrt"
 alias grep="grep --color=auto"
 alias pclcd30="ssh -XY viazlo@pclcd30.cern.ch"
-alias lxplus="ssh -XY viazlo@lxplus6.cern.ch"
+alias lxplus="ssh -XY oviazlo@lxplus7.cern.ch"
 alias du-dir="du --max-depth=1 -h"
 export HISTFILESIZE=10000
 export EDITOR=vim

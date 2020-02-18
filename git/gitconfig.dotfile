@@ -24,6 +24,7 @@
   [pull]
     rebase = true
   [user]
+    github = oviazlo
 	email = Oleksandr.Viazlo@cern.ch
 [flake8]
 	strict = true

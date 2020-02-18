@@ -1,33 +1,33 @@
   [alias]
-	st = status
-	ci = commit
-	co = checkout
-	lola = log --graph --decorate=full\n--pretty=oneline --abbrev-commit --all
-	logf = "!echo \"Remember to add -S<string>\" ; git log --color -p --source --all"
-	flakeS = "!git diff -U0 --staged | flake8 --diff"
-	flake = "!git diff -U0 | flake8 --diff"
-	br = branch -vv
-	rbi = rebase --interactive --autosquash --autostash -Xtheirs
+    st = status
+    ci = commit
+    co = checkout
+    lola = log --graph --decorate=full\n--pretty=oneline --abbrev-commit --all
+    logf = "!echo \"Remember to add -S<string>\" ; git log --color -p --source --all"
+    flakeS = "!git diff -U0 --staged | flake8 --diff"
+    flake = "!git diff -U0 | flake8 --diff"
+    br = branch -vv
+    rbi = rebase --interactive --autosquash --autostash -Xtheirs
         fixdiracpr = "!git rbi -x \"fixPythonStyle HEAD~; git commit --amend --no-edit -a; git rebase --continue\""
   [color]
-	ui = true
-	diff = auto
-	status = auto
+    ui = true
+    diff = auto
+    status = auto
   [core]
-	excludesfile = ~/.gitignore_global
-	editor = vim
+    excludesfile = ~/.gitignore_global
+    editor = vim
   [branch]
-	autosetuprebase = always
+    autosetuprebase = always
   [push]
-  	## for newer versions of git, otherwise try "simple"
-	default = current
+    ## for newer versions of git, otherwise try "simple"
+    default = current
   [pull]
     rebase = true
   [user]
     github = oviazlo
-	email = Oleksandr.Viazlo@cern.ch
+    email = Oleksandr.Viazlo@cern.ch
 [flake8]
-	strict = true
+    strict = true
     ignore =
        # indentation is not a multiple of 4
        E111

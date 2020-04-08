@@ -46,7 +46,7 @@ alias lxplus="ssh -XY oviazlo@lxplus7.cern.ch"
 alias du-dir="du --max-depth=1 -h"
 export HISTFILESIZE=10000
 export EDITOR=vim
-source ~/.git-prompt.sh
+source ~/env/bash/git-prompt.bash
 
 YELLOW="$(tput setaf 3)"
 GREEN="$(tput setaf 2)"
@@ -57,5 +57,3 @@ bind "set completion-ignore-case on"
 
 # export customy bash functions:
 . ~/env/bash/my_functions.bash
-
-. /opt/anaconda/etc/profile.d/conda.sh
